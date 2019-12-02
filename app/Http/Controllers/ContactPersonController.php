@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ContactPerson;
+use App\User;
 
 class ContactPersonController extends Controller
 {
@@ -18,7 +19,16 @@ class ContactPersonController extends Controller
     }
     public function index()
     {
-        $user=ContactPerson::orderBy('id','desc')->where('employee_id',auth()->user()->id)->paginate(10);
+        $users = User::role('SuperAdmin')->get();
+        if($users)
+        {
+            $user=ContactPerson::orderBy('id','desc')->paginate(10);
+
+        }
+        else{
+            $user=ContactPerson::orderBy('id','desc')->where('employee_id',auth()->user()->id)->paginate(10);
+
+        }
         return view('pages.ContactPerson.index')->with('user',$user);
     }
 

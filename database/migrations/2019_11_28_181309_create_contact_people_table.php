@@ -20,7 +20,7 @@ class CreateContactPeopleTable extends Migration
             $table->string('phone');
             $table->string('mobile')->nullable();
             $table->string('company_id');
-            $table->string('employeea_id');
+            $table->string('employee_id');
 
             // $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
             $table->timestamps();

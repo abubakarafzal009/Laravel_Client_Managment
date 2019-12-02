@@ -3308,7 +3308,7 @@ body:after {
 /* Input with icon */
 .form-control-position {
   position : absolute;
-  top : 2px;
+  top : 8px;
   right : 0;
   z-index : 2;
   display : block;

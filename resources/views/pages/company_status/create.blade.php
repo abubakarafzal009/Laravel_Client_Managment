@@ -15,14 +15,14 @@
                         <label class="control-label col-sm-4 text-right font-weight-bold" for="crud-indirizzo_carico">Status</label>
                         <div class="col-sm-8" id="wrap-indirizzo_carico">
                             <input name="status" type="text" class="form-control input-sm" value=""
-                                   placeholder="Status">
+                                   placeholder="Status" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="control-label col-sm-4 text-right font-weight-bold" for="crud-indirizzo_carico">Color</label>
                         <div class="col-sm-8" id="wrap-indirizzo_carico">
                             <input name="color" type="text" class="form-control input-sm" value=""
-                                   placeholder="Color">
+                                   placeholder="Color" required>
                         </div>
                     </div>
 

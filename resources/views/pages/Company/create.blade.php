@@ -42,13 +42,14 @@
                 
                                 <select required="" data-select-2="" name="status"
                                         class="form-control input-sm select2-hidden-accessible"  id="crud-contratto mul-2">
-                            <!-- <option value="1">Good</option> -->
-                                  
+                              
+                            <option value="1">Sample</option>
+
                                    @foreach (status() as $item)
                             <option value="{{$item->id}}">{{$item->company_status}}</option>
                                        
                                    @endforeach
-                                    
+                                   
                                    
                                 </select>
                             </div>

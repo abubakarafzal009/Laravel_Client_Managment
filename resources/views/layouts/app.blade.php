@@ -9,7 +9,7 @@
     <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>List View - Vuexy - Bootstrap HTML admin template</title>
+    <title>Client Managment System</title>
     <link rel="apple-touch-icon" href="{{asset ('app-assets/images/ico/apple-icon-120.png')}}">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('app-assets/images/ico/favicon.ico')}}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
@@ -116,7 +116,7 @@
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item mr-auto"><a class="navbar-brand" href="../../../html/ltr/vertical-menu-template/index.html">
                         <div class="brand-logo"></div>
-                        <h2 class="brand-text mb-0">Vuexy</h2>
+                        <h2 class="brand-text mb-0">Admin Panel</h2>
                     </a></li>
                 <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="feather icon-x d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
             </ul>
@@ -131,8 +131,10 @@
                 </li>
                 <li class=" nav-item"><a href="{{url('Role')}}"><i class="fa fa-tasks"></i><span class="menu-title" data-i18n="Knowledge Base">Roles</span></a>
                 </li> -->
-                
+                @role('SuperAdmin')
                 <li class=" nav-item"><a href="{{url('User')}}"><i class="feather icon-user"></i><span class="menu-title" data-i18n="Profile">User</span></a>
+
+                @endrole
                 <li class=" nav-item"><a href="{{url('CompanyStatus')}}"><i class="fa fa-info-circle"></i><span class="menu-title" data-i18n="Profile">CompanyStatus</span></a>
                 </li>
                 <li class=" nav-item"><a href="{{url('Company')}}"><i class="fa fa-building-o"></i><span class="menu-title" data-i18n="FAQ">Company</span></a>

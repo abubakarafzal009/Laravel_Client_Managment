@@ -58,17 +58,8 @@
                 
                                 <select required="" data-select-2="" name="role[]"
                                         class="form-control input-sm select2-hidden-accessible" multiple id="crud-contratto mul-2">
-                                   @foreach (role() as $item)
-                            <option 
-                            @foreach($roles as $role)
-                            @if($item->id==$role->role_id)
-                            selected
-                            value="{{$item->id}}"
-                            @endif
-                            @endforeach
-                            >{{$item->name}}</option>
-                                       
-                                   @endforeach
+                                 
+                           
                                     
                                    
                                 </select>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Company;
+use App\User;
 class CompanyController extends Controller
 {
     /**
@@ -17,7 +18,16 @@ class CompanyController extends Controller
     }
     public function index()
     {
-        $role=Company::where('employee_id',auth()->user()->id)->orderBy('id','desc')->paginate(10);
+        $users = User::role('SuperAdmin')->get();
+if($users)
+{
+    $role=Company::orderBy('id','desc')->paginate(10);
+
+}
+else{
+    $role=Company::where('employee_id',auth()->user()->id)->orderBy('id','desc')->paginate(10);
+
+}
         return view('pages.Company.index')->with('role',$role);
     }
 

@@ -76,14 +76,8 @@ class UserController extends Controller
         $user->password=Hash::make(request('password'));
         $user->phone=request('phone');
         $user->save();
-        foreach(request('role') as $role)
-        {
-            $user->assignRole($role);
-        }
-        $notification = array(
-            'message' => 'I am a successful message!', 
-            'alert-type' => 'success'
-        );
+       
+       
         toastr()->success('User has been saved successfully!');
         return redirect('User');
      }
@@ -109,7 +103,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $data['user']=User::where('id',$id)->first();
-        $data['roles']=User::join('model_has_roles','model_has_roles.model_id','=','users.id')->where('model_has_roles.model_type','App\User')->where('model_has_roles.model_id',$id)->get();
+        // $data['roles']=User::join('model_has_roles','model_has_roles.model_id','=','users.id')->where('model_has_roles.model_type','App\User')->where('model_has_roles.model_id',$id)->get();
         // dd($data['roles']);
         return view('pages.User.edit')->with($data);
 
@@ -154,13 +148,13 @@ class UserController extends Controller
             $user->email=request('email');
             $user->phone=request('phone');
             //    $user->password=Hash::make(request('password'));
-               \DB::table('model_has_roles')->where('model_id',$id)->delete();
+            //    \DB::table('model_has_roles')->where('model_id',$id)->delete();
                $user->update();
 
-               foreach(request('role') as $role)
-               {
-                   $user->assignRole($role);
-               }
+            //    foreach(request('role') as $role)
+            //    {
+            //        $user->assignRole($role);
+            //    }
 
                return redirect('User');
             }
@@ -194,13 +188,13 @@ class UserController extends Controller
             $user->phone=request('phone');
 
             //    $user->password=Hash::make(request('password'));
-               \DB::table('model_has_roles')->where('model_id',$id)->delete();
+            //    \DB::table('model_has_roles')->where('model_id',$id)->delete();
                $user->update();
 
-               foreach(request('role') as $role)
-               {
-                   $user->assignRole($role);
-               }
+            //    foreach(request('role') as $role)
+            //    {
+            //        $user->assignRole($role);
+            //    }
                toastr()->success('User has been Updated successfully!');
 
                return redirect('User');

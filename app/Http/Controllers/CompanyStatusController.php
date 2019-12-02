@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\CompanyStatus;
+use App\User;
 
 class CompanyStatusController extends Controller
 {
@@ -18,6 +19,7 @@ class CompanyStatusController extends Controller
     }
     public function index()
     {
+        
         $status=CompanyStatus::orderBy('id','desc')->get();
         return view('pages.company_status.index')->with('permissions',$status);
     }
