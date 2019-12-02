@@ -44,5 +44,6 @@ class DatabaseSeeder extends Seeder
        $user->assignRole('Admin');
 $user1 = User::create([ 'name' => 'John Doe', 'email' => 'superadmin@example.com', 'password' => bcrypt('password'), 'created_at' => '2019-05-28 04:45:27', 'updated_at' => '2019-05-28 04:45:27' ]);
  $user1->assignRole('SuperAdmin');
+ $user2=User::create([ 'name' => 'User Doe', 'email' => 'user@example.com', 'password' => bcrypt('password'), 'created_at' => '2019-05-28 04:45:27', 'updated_at' => '2019-05-28 04:45:27' ]);
     }
 }
